@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
+// @ts-ignore -- TypeScript has no declaration for this CSS side-effect import.
 import './App.css';
 
 function App() {

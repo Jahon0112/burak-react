@@ -1,6 +1,4 @@
 import React from "react";
-// @ts-ignore -- CSS side-effect imports are handled by the bundler.
-import "../css/app.css";
 import { Link, Route, Switch, useLocation } from "react-router-dom";
 import { HomePage } from "./screens/homePage";
 import { ProductsPage } from "./screens/productsPage";
@@ -9,6 +7,11 @@ import { UserPage } from "./screens/userPage";
 import { HomeNavbar } from "./components/headers/HomeNavbar";
 import { OtherNavbar } from "./components/headers/OtherNavbar";
 import { Footer } from "./components/footer";
+// @ts-ignore -- CSS side-effect imports are handled by the bundler.
+import "../css/app.css";
+// @ts-ignore -- CSS side-effect imports are handled by the bundler.
+import "../css/navbar.css";
+import { HelpPage } from "./screens/helpPage";
 function App() {
   const location = useLocation();
   console.log("Location:", location);
@@ -24,6 +27,9 @@ function App() {
         </Route>
         <Route path="/member-page">
           <UserPage />
+        </Route>
+        <Route path="/help">
+          <HelpPage />
         </Route>
         <Route path="/">
           <HomePage />
