@@ -2,7 +2,6 @@ import React from "react";
 // @ts-ignore -- CSS side-effect imports are handled by the bundler.
 import "../css/app.css";
 import { Link, Route, Switch, useLocation } from "react-router-dom";
-import { Container } from "@mui/material";
 import { HomePage } from "./screens/homePage";
 import { ProductsPage } from "./screens/productsPage";
 import { OrdersPage } from "./screens/ordersPage";
