@@ -1,17 +1,20 @@
 import React from "react";
 import { Link, Route, Switch, useLocation } from "react-router-dom";
-import { HomePage } from "./screens/homePage";
-import { ProductsPage } from "./screens/productsPage";
-import { OrdersPage } from "./screens/ordersPage";
-import { UserPage } from "./screens/userPage";
-import { HomeNavbar } from "./components/headers/HomeNavbar";
-import { OtherNavbar } from "./components/headers/OtherNavbar";
-import { Footer } from "./components/footer";
+import HomePage from "./screens/homePage";
+import ProductsPage from "./screens/productsPage";
+import OrdersPage from "./screens/ordersPage";
+import UserPage from "./screens/userPage";
+import HomeNavbar from "./components/headers/HomeNavbar";
+import OtherNavbar from "./components/headers/OtherNavbar";
+import Footer from "./components/footer";
+import HelpPage from "./screens/helpPage";
 // @ts-ignore -- CSS side-effect imports are handled by the bundler.
 import "../css/app.css";
 // @ts-ignore -- CSS side-effect imports are handled by the bundler.
 import "../css/navbar.css";
-import { HelpPage } from "./screens/helpPage";
+// @ts-ignore -- CSS side-effect imports are handled by the bundler.
+import "../css/footer.css";
+
 function App() {
   const location = useLocation();
   console.log("Location:", location);
