@@ -14,7 +14,6 @@ import "../css/app.css";
 import "../css/navbar.css";
 // @ts-ignore -- CSS side-effect imports are handled by the bundler.
 import "../css/footer.css";
-import Test from "./screens/test";
 
 function App() {
   const location = useLocation();
@@ -36,8 +35,7 @@ function App() {
           <HelpPage />
         </Route>
         <Route path="/">
-          <Test />
-          {/* <HomePage /> */}
+          <HomePage />
         </Route>
       </Switch>
       <Footer />
