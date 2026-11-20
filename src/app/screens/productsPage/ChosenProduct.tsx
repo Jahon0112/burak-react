@@ -5,17 +5,38 @@ import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Divider from "../../components/divider";
 import Button from "@mui/material/Button";
 import Rating from "@mui/material/Rating";
-// @ts-ignore Swiper
+// @ts-expect-error Swiper CSS is bundled at runtime and has no TypeScript declarations.
 import "swiper/css";
-// @ts-ignore Swiper
-import "swiper/css/free-mode";
-// @ts-ignore Swiper
+// @ts-expect-error Swiper CSS is bundled at runtime and has no TypeScript declarations.
 import "swiper/css/navigation";
-// @ts-ignore Swiper
+// @ts-expect-error Swiper CSS is bundled at runtime and has no TypeScript declarations.
 import "swiper/css/thumbs";
-// @ts-ignore Swiper
+// @ts-ignore Swiper modules are bundled at runtime but are not declared by this project's setup.
 import { FreeMode, Navigation, Thumbs } from "swiper";
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "@reduxjs/toolkit";
+import { setRestaurant, setChosenProduct } from "./slice";
+import { createSelector } from "reselect";
+import { retrieveChosenProduct, retrieveRestaurant } from "./selector";
+import { Product } from "../../../lib/types/product";
 
+/** REDUX SLICE & SELECTOR */
+const actionDispatch = (dispatch: Dispatch) => ({
+  setRestaurant: (data: Product[]) => dispatch(setRestaurant(data)),
+  setChosenProduct: (data: Product[]) => dispatch(setChosenProduct(data)),
+});
+const chosenProductRetriever = createSelector(
+  retrieveChosenProduct,
+  (chosenProduct) => ({
+    chosenProduct,
+  }),
+);
+const restaurantRetriever = createSelector(
+  retrieveRestaurant,
+  (restaurant) => ({
+    restaurant,
+  }),
+);
 export default function ChosenProduct() {
   return (
     <div className={"chosen-product"}>
