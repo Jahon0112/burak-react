@@ -122,6 +122,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
               <Button
                 variant="contained"
                 onClick={(e) => {
+                  console.log("BUTTON PRESSED!");
                   onAdd({
                     _id: chosenProduct._id,
                     quantity: 1,
