@@ -10,11 +10,12 @@ import Footer from "./components/footer";
 import useBasket from "./hooks/useBasket";
 import AuthenticationModal from "./components/auth";
 import HelpPage from "./screens/helpPage";
-// @ts-ignore -- CSS side-effect imports are handled by the bundler.
+// @ts-ignore
 import "../css/app.css";
-// @ts-ignore -- CSS side-effect imports are handled by the bundler.
+// @ts-ignore
 import "../css/navbar.css";
-// @ts-ignore import "../css/footer.css";
+// @ts-ignore
+import "../css/footer.css";
 
 function App() {
   const location = useLocation();
@@ -34,6 +35,8 @@ function App() {
           onRemove={onRemove}
           onDelete={onDelete}
           onDeleteAll={onDeleteAll}
+          setSignupOpen={setSignupOpen}
+          setLoginOpen={setLoginOpen}
         />
       ) : (
         <OtherNavbar
@@ -42,6 +45,8 @@ function App() {
           onRemove={onRemove}
           onDelete={onDelete}
           onDeleteAll={onDeleteAll}
+          setSignupOpen={setSignupOpen}
+          setLoginOpen={setLoginOpen}
         />
       )}
       <Switch>
