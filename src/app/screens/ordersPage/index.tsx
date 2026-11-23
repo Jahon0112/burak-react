@@ -26,6 +26,8 @@ export default function OrdersPage() {
     actionDispatch(useDispatch());
   const [value, setValue] = useState("1");
 
+  /**HANDLERS**/
+
   const handleChange = (e: SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
