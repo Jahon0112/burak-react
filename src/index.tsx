@@ -10,6 +10,7 @@ import theme from "./app/MaterialTheme";
 // @ts-expect-error CSS is handled by the bundler, not TypeScript.
 import "./css/index.css";
 import { BrowserRouter as Router } from "react-router-dom";
+import ContextProvider from "./app/context/ContextProvider";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -17,13 +18,14 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        ``
-        <Router>
-          <App />
-        </Router>
-      </ThemeProvider>
+      <ContextProvider>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Router>
+            <App />
+          </Router>
+        </ThemeProvider>
+      </ContextProvider>
     </Provider>
   </React.StrictMode>,
 );
