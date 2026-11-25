@@ -74,7 +74,9 @@ export default function ProcessOrders(props: ProcessOrdersType) {
                         <img src={"/icons/close.svg"} />
                         <p>{item.itemQuantity}</p>
                         <img src={"/icons/pause.svg"} />
-                        <p style={{ marginLeft: "15px" }}>$</p>
+                        <p style={{ marginLeft: "15px" }}>
+                          ${item.itemQuantity * item.itemPrice}
+                        </p>
                       </Box>
                     </Box>
                   );
